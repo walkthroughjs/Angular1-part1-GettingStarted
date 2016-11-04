@@ -6,11 +6,60 @@ To get your project started, let's pull up your text editor of choice and create
 
 In your `index.html` file, go ahead and set up a normal html structure with html, head, and body tags.
 
+```text
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  </body>
+</html>
+```
+
 Inside your opening html element, insert this attribute: `ng-app="myFirstNgApp"`. You have just initiated the angular app!
+
+```text
+<!DOCTYPE html>
+<html ng-app="myFirstNgApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  </body>
+</html>
+```
 
 Now, inside your opening body tag, insert this attribute: `ng-controller="myFirstController`. This may or may not be your first "rodeo" so to speak. If not, great, but if so, this may seem weird. Hold tight, we'll get there before the end of part 1.
 
-Ahh, we have our first controller. Now that we have that, let's put one more thing inside the body tags. Put `{{hello}}` right after the opening body tag. Make sure you save the file after you do this!
+```text
+<!DOCTYPE html>
+<html ng-app="myFirstNgApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller="myFirstController">
+  </body>
+</html>
+```
+
+Now that we have that, let's put one more thing inside the body tags. Put `{{hello}}` right after the opening body tag. Make sure you save the file after you do this!
+
+```text
+<!DOCTYPE html>
+<html ng-app="myFirstNgApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller="myFirstController">
+    {{hello}}
+  </body>
+</html>
+```
 
 Okay, now that we're done with the `index.html` file, let's move on to `app.js`. 
 
@@ -23,3 +72,14 @@ Moving on. Below that, we are going to create another instance of the app variab
 </code></pre>
 
 If you don't know what a controller is in an MVC framework, think of it as a middleman between the model and the view, the view being the HTML, so inside this controller, we're going to be able to connect with the HTML. The way we do that is through something called the `scope` variable.
+
+Remember inside the opening body tag, we put `{{hello}}`? We just created a variable inside `myFirstController` called `$scope.hello`. Awesome! So now, we just have to set the value of `$scope.hello` inside the controller. Per first attempt rules, let's assign `$scope.hello` to a string of `'world'`. Inside the parameters of the callback, though, we have to 'inject' `$scope`. You'll hear the word 'inject' a lot with Angular because of the idea of 'dependency injection'. We'll get more into that later, though. For now, let's make the controller look like this:
+
+<pre><code>app.controller('myFirstController', function($scope) {
+  $scope.hello = 'world';
+});
+</code></pre>
+
+```text
+<html>
+```
