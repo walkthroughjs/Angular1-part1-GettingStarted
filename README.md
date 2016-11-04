@@ -82,7 +82,7 @@ app.controller('myFirstController', function($scope) {
 });
 </code></pre>
 
-Okay, so now that we have all that, once we open that index.html, it should all work, right? CLOSE, but not yet. Let's open up index.html, though, to see what it shows. Now, we need to add Angular in a script tag. You can do it one of two ways. You can either download it and include it in the project directory OR you can use the CDN, which is the remotely hosted version of the AngularJS file. Make sure that when you download it or grab the CDN that is of 1.5.x, not 2.x. Angular was completely rewritten for version 2 and looks/works nothing alike, so none of this would work! For this example, we're just going to use the CDN, though.
+Okay, so now that we have all that, once we open that index.html, it should all work, right? CLOSE, but not yet. Let's open up index.html, though, to see what it shows. The only thing you're going to see is still `{{hello}}`. We have all the code, but we didn't include Angular in our project, so let's do that. You can do it one of two ways. You can either download it and include it in the project directory OR you can use the CDN, which is the remotely hosted version of the AngularJS file. Make sure that when you download it or grab the CDN that is of 1.5.x, not 2.x. Angular was completely rewritten for version 2 and looks/works nothing alike, so none of this would work! For this example, we're just going to use the CDN, though.
 
 ```text
 <!DOCTYPE html>
@@ -98,3 +98,22 @@ Okay, so now that we have all that, once we open that index.html, it should all 
   </body>
 </html>
 ```
+Let's pull it up again. All we see is the `{{hello}}` still. We have everything, though, right? NOPE. We didn't include `app.js`. So, let's include that and see what happens. Make sure you add it BELOW the Angular CDN. If you added it before, our project wouldn't know what "Angular" was.
+
+```text
+<!DOCTYPE html>
+<html ng-app="myFirstNgApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller="myFirstController">
+    {{hello}}
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>
+```
+
+And when we pull this up, VOILA! There is our `hello` value that we set in the controller. We know have a working Angular app! Yay! I'm going to end part 1 here because that was a lot to take in, but in the next lesson, we're going to talk about ng-model and more about controllers. I strongly encourage you to follow along with the lesson and not look at the solution branch before your version is working, but if you get stuck and you can't get it working, that solution is there to help. See you in part 2!
