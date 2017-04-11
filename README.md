@@ -1,6 +1,6 @@
 # Angular1-GettingStarted
 
-Angular is a fantastic MVC framework created by Google that has a phenomenal community. Almost anything that you want to know about it, someone has already asked. I apologize, as well. I wasn't able to find a way to insert HTML into this README, but I'm going to assume that you have a pretty decent understanding of what I'm talking about. If you don't, feel free to send me an email and ask me a question! Without further ado, though, let's get started.
+Angular is a fantastic MVC framework created by Google that has a phenomenal community. Almost anything that you want to know about, someone has already asked somewhere on the inter-webs, so a simple Google search will almost definitely find you the answer. Without further ado, though, let's get started.
 
 To get your project started, let's pull up your text editor of choice and create two files. `index.html` and `app.js`.
 
